@@ -1,0 +1,58 @@
+#preloader {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: #fff;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 1000;
+ opacity: 1;
+ transition: opacity 0.5s ease-out;
+}
+
+#preloader.hidden {
+ opacity: 0;
+ pointer-events: none;
+}
+
+#preloader-animation {
+ text-align: center;
+}
+
+#preloader-animation svg {
+ width: 80px;
+ height: 80px;
+ display: block;
+ margin: 0 auto 10px;
+}
+
+#bag-outline {
+ stroke-dasharray: 280; /* Adjust based on the path length */
+ stroke-dashoffset: 280;
+ animation: drawBag 1.5s linear forwards;
+}
+
+#fill-path {
+ transform-origin: bottom center;
+ transform: scaleY(0);
+ animation: fillBag 1s ease-out 1.5s forwards; /* Starts after the outline is drawn */
+}
+
+@keyframes drawBag {
+ to {
+  stroke-dashoffset: 0;
+ }
+}
+
+@keyframes fillBag {
+ to {
+  transform: scaleY(1);
+ }
+}
+
+#preloader-animation p {
+ color: #333;
+}
