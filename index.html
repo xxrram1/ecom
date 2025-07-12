@@ -5,70 +5,8 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Your Website Title</title>
  <link rel="icon" href="https://i.ibb.co/zVmqkj4c/9d0191eac114e74094adafbb42953fb2.jpg" type="image/svg+xml">
- <style>
-  #preloader {
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background: #fff;
- display: flex;
- justify-content: center;
- align-items: center;
- z-index: 1000;
- opacity: 1;
- transition: opacity 0.5s ease-out;
-}
-#preloader.hidden {
- opacity: 0;
- pointer-events: none;
-}
-#preloader-animation {
- text-align: center;
-}
-#preloader-animation svg {
- width: 80px;
- height: 80px;
- display: block;
- margin: 0 auto 10px;
-}
-#bag-outline {
- stroke-dasharray: 280;
- stroke-dashoffset: 280;
- animation: drawBag 1.5s linear forwards;
-}
-#fill-path {
- transform-origin: bottom center;
- transform: scaleY(0);
- animation: fillBag 1s ease-out 1.5s forwards; 
-}
-@keyframes drawBag {
- to {
-  stroke-dashoffset: 0;
- }
-}
-@keyframes fillBag {
- to {
-  transform: scaleY(1);
- }
-}
-#preloader-animation p {
- color: #333;
-}
-</style>
 </head>
 <body>
- <div id="preloader">
-  <div id="preloader-animation">
-   <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path id="bag-outline" d="M10 10 L30 10 L35 80 L65 80 L70 10 L90 10 L85 90 L15 90 Z M35 20 L65 20 M40 70 L60 70" fill="none" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <path id="fill-path" d="M35 80 L65 80" fill="#your-primary-color" />
-   </svg>
-   <p>กำลังโหลด...</p>
-  </div>
- </div>
-
  <div id="root"></div>
  <script type="module" src="/src/main.tsx"></script>
 </body>

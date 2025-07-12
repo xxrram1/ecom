@@ -1,58 +1,48 @@
 #preloader {
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background: #fff;
- display: flex;
- justify-content: center;
- align-items: center;
- z-index: 1000;
- opacity: 1;
- transition: opacity 0.5s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
 }
 
 #preloader.hidden {
- opacity: 0;
- pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 #preloader-animation {
- text-align: center;
+  text-align: center;
 }
 
 #preloader-animation svg {
- width: 80px;
- height: 80px;
- display: block;
- margin: 0 auto 10px;
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto 10px;
+  animation: bagPulse 1.5s ease-in-out infinite; /* ✅ เพิ่มแอนิเมชันใหม่ */
 }
 
-#bag-outline {
- stroke-dasharray: 280; /* Adjust based on the path length */
- stroke-dashoffset: 280;
- animation: drawBag 1.5s linear forwards;
-}
-
-#fill-path {
- transform-origin: bottom center;
- transform: scaleY(0);
- animation: fillBag 1s ease-out 1.5s forwards; /* Starts after the outline is drawn */
-}
-
-@keyframes drawBag {
- to {
-  stroke-dashoffset: 0;
- }
-}
-
-@keyframes fillBag {
- to {
-  transform: scaleY(1);
- }
+/* ✅ สร้าง keyframes ใหม่สำหรับแอนิเมชันการเต้น */
+@keyframes bagPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 #preloader-animation p {
- color: #333;
+  color: #333;
 }

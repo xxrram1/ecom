@@ -1,3 +1,5 @@
+// src/pages/Index.tsx
+
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -14,6 +16,7 @@ import { formatCurrency } from '@/lib/currencyUtils';
 import Footer from '@/components/Footer';
 
 // ... (ส่วนอื่นๆ ของไฟล์เหมือนเดิม)
+
 const categoryIcons = {
   'เสื้อเชิ้ต': Shirt,
   'เสื้อยืด': User,
@@ -38,7 +41,6 @@ const categoryIcons = {
   'Shoes': Footprints,
 };
 
-// Color mapping for categories - ปรับเป็นโทน sage/gray
 const categoryColors = {
   'เสื้อเชิ้ต': 'from-sage-50 to-sage-100 border-sage-200 hover:from-sage-100 hover:to-sage-150',
   'เสื้อยืด': 'from-gray-50 to-gray-100 border-gray-200 hover:from-gray-100 hover:to-gray-150',
@@ -90,7 +92,6 @@ const Index = () => {
     retryDelay: 1000,
   });
   
-  // ... (ส่วนที่เหลือของไฟล์เหมือนเดิม)
   const { data: categories, isLoading: isLoadingCategories, error: categoriesError } = useQuery<any[]>({
     queryKey: ['categories'],
     queryFn: async () => {
